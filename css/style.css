@@ -742,6 +742,453 @@ h2 {
     top: 52%;
   }
 }
+/* ---------- tablets and large phones (up to 900px) ---------- */
+@media (max-width: 900px) {
+  .power-grid {
+    grid-template-columns: 1fr 1fr;      /* callout drops under the two paragraphs */
+    margin-top: 6rem;
+  }
+  .power-callout {
+    grid-column: 1 / -1;
+    transform: none;
+    align-items: center;
+    margin: 1rem auto 0;
+  }
+  .quote figcaption {
+    right: 6%;
+  }
+}
+
+/* ---------- phones, portrait (up to 720px): extra rules on top of the block above ---------- */
+@media (max-width: 720px) {
+  body {
+    font-size: 1rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  .btn {
+    min-height: 44px;                     /* comfortable touch target */
+  }
+  .art-actions {
+    bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* landing title: bigger, kept inside the screen, Chinese title tucked in beside the first line */
+  .title {
+    font-size: clamp(2.6rem, 15vw, 5rem);
+    padding-bottom: 14vh;
+  }
+  .title-bg {
+    width: 5.2em;
+  }
+  .title-zh {
+    left: calc(100% + .15em);
+    height: 1.5em;
+  }
+
+  /* paper sections */
+  .sheet {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  #sdg {
+    padding-top: calc(var(--rh) + var(--lw) * .30);
+  }
+
+  /* SDG: stack badge, label, title and copy in a centred column instead of absolute scatter */
+  .sdg-layout {
+    min-height: 0;
+    padding-top: 0;
+    gap: 1.2rem;
+  }
+  .sdg-badge,
+  .sdg-label {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+  .sdg-badge {
+    width: 9rem;
+  }
+  .sdg-label {
+    width: 7rem;
+  }
+  .sdg-label img {
+    width: 100%;
+  }
+  .sdg-label p {
+    font-size: .6rem;
+  }
+  .sdg-title {
+    margin-bottom: 1.2rem;
+  }
+  .sdg-title-gender { transform: translateX(-.3em); }
+  .sdg-title-equality { transform: translateX(.3em); }
+  .sdg-copy .big {
+    font-size: 1.05rem;
+    margin-bottom: 1.6rem;
+  }
+  .sdg-copy .big br {
+    display: none;                        /* let the sentence wrap naturally */
+  }
+  .sdg-ornament {
+    display: none;                        /* thin side rules crowd the text on a narrow screen */
+  }
+
+  /* quote: in normal flow so nothing is clipped; lines wrap and centre */
+  #quote {
+    transform: none;
+    margin-top: 2rem;
+  }
+  .quote {
+    min-height: 0;
+    gap: 1.4rem;
+    align-items: center;
+  }
+  .quote-label {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 7rem;
+    align-self: flex-start;
+  }
+  .quote-label p {
+    font-size: .6rem;
+  }
+  .quote blockquote {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    transform: none;
+  }
+  .quote blockquote p {
+    font-size: clamp(2.1rem, 10.5vw, 3.2rem);
+    line-height: 1;
+  }
+  .quote-line,
+  .quote-line-left,
+  .quote-line-center,
+  .quote-line-right {
+    width: auto;
+    max-width: 100%;
+    transform: none;
+  }
+  .quote figcaption {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+    font-size: .85rem;
+  }
+  .quote-event br {
+    display: none;
+  }
+
+  /* paragraph + call to action */
+  #power {
+    transform: none;
+    margin-top: 1rem;
+  }
+  .power-label {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 9rem;
+    margin-bottom: 1.5rem;
+  }
+  .power-label p {
+    font-size: .6rem;
+  }
+  .power-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-top: 0;
+  }
+  .power-grid .essay:first-of-type::first-letter {
+    font-size: 3.6rem;
+  }
+  .power-callout {
+    transform: none;
+    align-items: center;
+    text-align: center;
+    white-space: normal;
+    font-size: clamp(2rem, 9.5vw, 2.8rem);
+    margin-top: .8rem;
+  }
+
+  /* about the artwork */
+  .artwork-layout {
+    min-height: 0;
+  }
+  .artwork-label {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 8.5rem;
+    margin: 0 auto 1.2rem;
+  }
+  .artwork-label p {
+    font-size: .6rem;
+  }
+  .artwork-title {
+    margin-bottom: 2rem;
+  }
+  .artwork-title-weave { transform: translateX(-.3em); }
+  .artwork-title-voices { transform: translateX(.3em); }
+  .artwork-card {
+    min-height: 9rem;
+    padding: 1.4rem 0;
+  }
+  .artwork-card h3 {
+    font-size: 1.05rem;
+  }
+  .artwork-card blockquote {
+    font-size: 1rem;
+  }
+  .artwork-translation {
+    font-size: .8rem;
+  }
+  .artwork-copy {
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  /* credits */
+  .credits dl {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+  }
+}
+
+/* ---------- narrow phones (up to 500px): smaller text throughout ---------- */
+@media (max-width: 500px) {
+  body {
+    font-size: .92rem;
+  }
+  .title {
+    font-size: clamp(2.1rem, 12vw, 4rem);
+  }
+  .btn {
+    font-size: .88rem;
+  }
+  .loader-label {
+    font-size: .72rem;
+  }
+
+  /* SDG */
+  .sdg-badge {
+    width: 8rem;
+  }
+  .sdg-label,
+  .quote-label {
+    width: 6rem;
+  }
+  .sdg-label p,
+  .quote-label p,
+  .power-label p,
+  .artwork-label p {
+    font-size: .54rem;
+  }
+  .sdg-title {
+    font-size: clamp(2.8rem, 12.5vw, 4.2rem);
+  }
+  .sdg-copy .big {
+    font-size: .92rem;
+  }
+  .sdg-copy .link {
+    font-size: .85rem;
+  }
+
+  /* quote */
+  .quote blockquote p {
+    font-size: clamp(1.7rem, 8.5vw, 2.6rem);
+  }
+  .quote figcaption {
+    font-size: .76rem;
+  }
+
+  /* paragraph + call to action */
+  .power-label {
+    width: 8rem;
+  }
+  .essay {
+    font-size: .84rem;
+    line-height: 1.75;
+  }
+  .power-grid .essay:first-of-type::first-letter {
+    font-size: 2.8rem;
+  }
+  .power-callout {
+    font-size: clamp(1.6rem, 7.6vw, 2.3rem);
+  }
+
+  /* about the artwork */
+  .artwork-label {
+    width: 7.5rem;
+  }
+  .artwork-title {
+    font-size: clamp(2.8rem, 12.5vw, 4.2rem);
+  }
+  .artwork-card h3 {
+    font-size: .92rem;
+  }
+  .artwork-card blockquote {
+    font-size: .88rem;
+  }
+  .artwork-translation {
+    font-size: .72rem;
+  }
+  .artwork-copy {
+    font-size: .84rem;
+  }
+
+  /* credits */
+  .kicker {
+    font-size: .62rem;
+  }
+  .credits dt {
+    font-size: .56rem;
+  }
+  .credits dd {
+    font-size: .72rem;
+    line-height: 1.45;
+  }
+
+  /* ---- spacing: more side padding and breathing room between blocks ---- */
+  .sheet {
+    padding: 3.5rem 1.6rem;
+  }
+  .credits {
+    padding: calc(var(--lw) * .1) 1.6rem 4rem;
+  }
+  .wrap {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+  .art-actions {
+    padding: 0 1.6rem;
+  }
+  .btn {
+    padding: .8em 1.6em;
+  }
+  .title {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .sdg-layout {
+    gap: 1.6rem;
+    padding-bottom: 1.5rem;
+  }
+  .sdg-title {
+    margin-bottom: 1.6rem;
+  }
+  .sdg-copy .big {
+    margin-bottom: 2rem;
+    padding: 0 .6rem;
+  }
+
+  #quote {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .quote {
+    gap: 1.8rem;
+    padding: 0 .4rem;
+  }
+  .quote figcaption {
+    padding: 0 .6rem;
+  }
+
+  #power {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .power-label {
+    margin-bottom: 2rem;
+  }
+  .power-grid {
+    gap: 1.8rem;
+    padding: 0 .4rem;
+  }
+  .power-callout {
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .artwork-label {
+    margin-bottom: 1.6rem;
+  }
+  .artwork-title {
+    margin-bottom: 2.4rem;
+  }
+  .artwork-cards {
+    gap: 2rem;
+    margin-bottom: 2.4rem;
+  }
+  .artwork-card-content {
+    width: 80%;
+  }
+  .artwork-copy {
+    padding: 0 .6rem;
+  }
+  .artwork-copy p + p {
+    margin-top: 1rem;
+  }
+
+  .credits dl {
+    gap: 1.1rem;
+    padding: 0 .4rem;
+  }
+}
+
+/* ---------- small phones (up to 400px): tighter spacing, slightly smaller still ---------- */
+@media (max-width: 400px) {
+  .sheet {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+  .credits {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+  .sdg-badge {
+    width: 7rem;
+  }
+  .essay,
+  .artwork-copy {
+    font-size: .82rem;
+  }
+  .power-grid .essay:first-of-type::first-letter {
+    font-size: 2.6rem;
+  }
+}
+
+/* ---------- phones in landscape (short screens) ---------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .title {
+    font-size: clamp(2rem, 8vh, 3.4rem);
+    padding-bottom: 8vh;
+  }
+  .art-actions {
+    bottom: .8rem;
+  }
+  .btn {
+    padding: .45em 1.1em;
+  }
+  #loader .loader-inner {
+    width: min(18rem, 50vw);
+  }
+}
+
+/* ---------- touch screens: no sticky hover lift on buttons ---------- */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pl img { transform: none !important; }
   html {

@@ -1,8 +1,7 @@
-// Landing page: loading screen + parallax stage. Not part of the artwork (sketch.js).
-// Layers, back to front: paper background, title, wave 1, wave 2, wave 3.
-// Scrolling moves each wave a different distance (parallax). The waves climb over the title,
-// and their silhouettes become a CSS mask on the live artwork (#art-mount), so the painting
-// is revealed through the waves. When the waves fill the screen the mask is removed.
+// Landing page: loading screen + parallax stage.
+// Layers (back to front): paper background, title, wave 1, wave 2, wave 3.
+
+
 (function () {
   'use strict';
   const IMG_W = 1920, IMG_H = 3480;           // size of the extended wave images
@@ -34,8 +33,8 @@
 
   function update() {
     const vw = innerWidth, vh = innerHeight;
-    const k = Math.max(vw, vh * 16 / 9) / IMG_W;          // scale so the 16:9 image always covers the screen
-    const w = IMG_W * k, h = IMG_H * k, unit = 1080 * k;  // unit = height of one original wave image
+    const k = Math.max(vw, vh * 16 / 9) / IMG_W;          
+    const w = IMG_W * k, h = IMG_H * k, unit = 1080 * k;  
     const x = (vw - w) / 2;
     const p = clamp(scrollY / (hero.offsetHeight - vh), 0, 1);
     const ys = waves.map(wv => (wv.y0 + (wv.yf - wv.y0) * p) * unit);
@@ -44,13 +43,13 @@
       wv.el.style.width = w + 'px';
       wv.el.style.transform = 'translate3d(' + x + 'px,' + ys[i] + 'px,0)';
     });
-    title.style.transform = 'translate3d(0,' + (-p * vh * 0.35) + 'px,0)';   // slowest layer: gets overtaken
+    title.style.transform = 'translate3d(0,' + (-p * vh * 0.35) + 'px,0)';   
 
     const finished = p >= 0.999;
     stage.style.visibility = finished ? 'hidden' : 'visible';
     body.classList.toggle('landing-active', !finished);
     setMask(!finished, x, w, h, ys);
-    if (!finished) art.style.opacity = smooth(FADE_START, FADE_END, p);   // colour waves melt into the painting
+    if (!finished) art.style.opacity = smooth(FADE_START, FADE_END, p);   
   }
 
   let ticking = false;

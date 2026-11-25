@@ -1,4 +1,4 @@
-// Page behaviour (not part of the artwork): today's date, reveal-on-scroll, "weave a new cloth" button.
+// Page behaviour: today's date, reveal-on-scroll, "weave a new cloth" button.
 (function () {
   // current date, formatted for the credits
   const t = document.getElementById('today');

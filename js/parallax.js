@@ -1,9 +1,3 @@
-// Ink-wash parallax for the text part of the page (not part of the artwork).
-// Each .pl wrapper (placed by CSS) holds one image. This script shifts the image by an amount that
-// depends on the scroll position, so each layer moves at a different speed than the text:
-//   mountain, path : slower than the text (drift behind it, leave the screen last)
-//   cloud          : faster than the text (floats across it and clears away)
-//   silk           : faster at the end of the page (rises into place behind the credits)
 (function () {
   'use strict';
   const layers = Array.from(document.querySelectorAll('.pl')).map(el => ({
